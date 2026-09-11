@@ -1,7 +1,10 @@
 package com.orangehrmlive.demo.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class DashboardPage extends BasePage{
 
@@ -35,7 +38,12 @@ public class DashboardPage extends BasePage{
         return driver.getCurrentUrl().contains("/dashboard");
     }
 
-    public String getHeaderText(){
-        return getText(titleDashboardPage);
+    public boolean getHeaderText(){
+        try {
+            WebElement titlePage = wait.until(
+                    ExpectedConditions.visibilityOfElementLocated(titleDashboardPage));
+            String inputValue = titlePage.getAttribute("value");
+            return inputValue == null || inputValue.equals("");
+        } catch (TimeoutException e) { return false; }
     }
 }
