@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class LoginPage extends BasePage {
 
-    //Attributes:
+    //Locators:
     private By usernameField =  By.cssSelector("input[placeholder='Username']");
     private By passwordField = By.cssSelector("input[placeholder='Password']");
     private By loginButton = By.cssSelector("button[type='submit']");

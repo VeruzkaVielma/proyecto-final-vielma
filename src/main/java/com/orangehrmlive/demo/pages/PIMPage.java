@@ -10,7 +10,7 @@ import java.util.List;
 
 public class PIMPage extends BasePage{
 
-    //Attributes:
+    //Locators:
     private By titlePIMPage = By.cssSelector("h6.oxd-topbar-header-breadcrumb-module");
     private By employeeNameField = By.cssSelector("input[placeholder='Type for hints...']");
     private By searchButton = By.cssSelector("button[type='submit']");
@@ -23,9 +23,7 @@ public class PIMPage extends BasePage{
             "[normalize-space()='Dashboard']");
 
     //Constructor method:
-    public PIMPage(WebDriver driver) {
-        super(driver);
-    }
+    public PIMPage(WebDriver driver) { super(driver); }
 
     // Mandatory methods:
     public PIMPage searchEmployeeByName(String employeeName){
