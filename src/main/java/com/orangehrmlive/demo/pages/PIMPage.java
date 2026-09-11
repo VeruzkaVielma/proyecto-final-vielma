@@ -11,16 +11,13 @@ import java.util.List;
 public class PIMPage extends BasePage{
 
     //Attributes:
-    private By titlePIMPage = By.xpath("//*[@id=\"app\"]/div[1]/div[1]/header/" +
-            "div[1]/div[1]/span/h6");
+    private By titlePIMPage = By.cssSelector("h6.oxd-topbar-header-breadcrumb-module");
     private By employeeNameField = By.cssSelector("input[placeholder='Type for hints...']");
     private By searchButton = By.cssSelector("button[type='submit']");
     private By resetButton = By.cssSelector("button[type='reset']");
     private By tableRows = By.cssSelector(".oxd-table-body .oxd-table-card");
     private By loadingSpinner = By.cssSelector(".oxd-loading-spinner");
-    private By noRecordFoundMessage = By.cssSelector("#app > div.oxd-layout.orangehrm-upgrade-layout > " +
-            "div.oxd-layout-container > div.oxd-layout-context > div > div.orangehrm-paper-container > " +
-            "div:nth-child(2) > div > span");
+    private By noRecordFoundMessage = By.xpath("//span[normalize-space()='No Records Found']");
     private By infoToast = By.cssSelector(".oxd-text.oxd-text--p.oxd-text--toast-message.oxd-toast-content-text");
     private By dashboardOptionMenu = By.xpath("//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name']" +
             "[normalize-space()='Dashboard']");
@@ -65,7 +62,7 @@ public class PIMPage extends BasePage{
         return false;
     }
 
-    public String getHeaderText(){ return getText(titlePIMPage); }
+    public String getPIMHeaderText(){ return getText(titlePIMPage); }
 
     public boolean isNoRecordsDisplayed(){ return isElementVisible(noRecordFoundMessage); }
 

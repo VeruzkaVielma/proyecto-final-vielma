@@ -17,6 +17,7 @@ Feature: Full Flow on OrangeHRM
     And the user enters password "admin123" in the Password field
     And the user clicks the login button
     Then the user should be navigated to the Dashboard page
+    And the Dashboard header should be "Dashboard"
 
   # ============================================================
   # SCENARIO 2: Failed Login
@@ -36,8 +37,10 @@ Feature: Full Flow on OrangeHRM
   Scenario: Search for an existing employee in the PIM module
     When the user logs in successfully with username "Admin" and password "admin123"
     Then the user should be navigated to the Dashboard page
+    And the Dashboard header should be "Dashboard"
     When the user clicks the PIM module
     Then the user should be navigated to the PIM page
+    And the PIM header should be "PIM"
     When the user searches for an employee by "John"
     Then the user should see search results matching "John"
 
@@ -48,8 +51,10 @@ Feature: Full Flow on OrangeHRM
   Scenario: Search for a non-existing employee in the PIM module
     When the user logs in successfully with username "Admin" and password "admin123"
     Then the user should be navigated to the Dashboard page
+    And the Dashboard header should be "Dashboard"
     When the user clicks the PIM module
     Then the user should be navigated to the PIM page
+    And the PIM header should be "PIM"
     When the user searches for an employee by "test-automation"
     Then the user should see an info toast with the message "No Records Found"
     And the user should not see search results
@@ -61,8 +66,10 @@ Feature: Full Flow on OrangeHRM
   Scenario: Reset an employee search in the PIM module
     When the user logs in successfully with username "Admin" and password "admin123"
     Then the user should be navigated to the Dashboard page
+    And the Dashboard header should be "Dashboard"
     When the user clicks the PIM module
     Then the user should be navigated to the PIM page
+    And the PIM header should be "PIM"
     When the user searches for an employee by "John"
     Then the user should see search results matching "John"
     When the user clicks the reset button
@@ -76,11 +83,14 @@ Feature: Full Flow on OrangeHRM
   Scenario: Complete E2E flow - Login, Search Employee and Logout
     When the user logs in successfully with username "Admin" and password "admin123"
     Then the user should be navigated to the Dashboard page
+    And the Dashboard header should be "Dashboard"
     When the user clicks the PIM module
     Then the user should be navigated to the PIM page
+    And the PIM header should be "PIM"
     When the user searches for an employee by "John"
     Then the user should see search results matching "John"
     When the user clicks the Dashboard option in the menu
     Then the user should be navigated to the Dashboard page
+    And the Dashboard header should be "Dashboard"
     When the user clicks the logout button
     Then the user should be redirected to the Login page

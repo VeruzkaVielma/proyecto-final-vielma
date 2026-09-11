@@ -49,6 +49,14 @@ public class FullFlowSteps {
         System.out.println("   ✅ Verified: user is on the dashboard page");
     }
 
+    @And ("the Dashboard header should be {string}")
+    public void verifyDashboardHeader(String expectedDashboardHeader){
+        dashboardPage = new DashboardPage(Hooks.driver);
+        String actualDashboardHeader = dashboardPage.getDashboardHeaderText();
+        Assert.assertEquals(actualDashboardHeader,expectedDashboardHeader,"The title on the dashboard page is incorrect");
+        System.out.println("   ✅ Verified: Header in Dashboard Page is: " + actualDashboardHeader);
+    }
+
     @Then ("the user should see the error message {string}")
     public void verifiedErrorDisplayed(String expectedErrorMessageLoginPage){
         loginPage.isErrorDisplayed();
@@ -69,7 +77,7 @@ public class FullFlowSteps {
     public void login(String username, String password) {
         loginPage = new LoginPage(driver);
         loginPage.loginAs(username, password);
-        System.out.println("   ➡️ Logging in: " + username + "," + password);
+        System.out.println("   ➡️ Logging in: ");
     }
 
     @When("the user clicks the PIM module")
@@ -84,6 +92,14 @@ public class FullFlowSteps {
         pimPage = new PIMPage(Hooks.driver);
         Assert.assertTrue(pimPage.isOnPIMPage(),"The user should be on the PIM page");
         System.out.println("   ✅ Verified: user is on the PIM page");
+    }
+
+    @And ("the PIM header should be {string}")
+    public void verifyPIMHeader(String expectedPIMHeader){
+        pimPage = new PIMPage(Hooks.driver);
+        String actualPIMHeader = pimPage.getPIMHeaderText();
+        Assert.assertEquals(actualPIMHeader,expectedPIMHeader,"The title on the PIM page is incorrect");
+        System.out.println("   ✅ Verified: Header in PIM Page is: " + actualPIMHeader);
     }
 
     @When ("the user searches for an employee by {string}")

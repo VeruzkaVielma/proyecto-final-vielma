@@ -180,6 +180,8 @@ Common issues:
 | PIM search for `John` fails | The public demo data may no longer include a matching employee. Inspect the current PIM records and update the feature data if needed. |
 | Maven cannot download dependencies | Check your network, proxy, and local Maven repository permissions. |
 | Element-not-found or timeout error | The OrangeHRM UI can load asynchronously. Prefer explicit waits and target result cards rather than only a table container. |
+| `StaleElementReferenceException` while reading PIM rows | OrangeHRM may re-render the table while Selenium reads it. Wait for the results to finish loading and retry the row lookup. |
+| `Timed out waiting for driver server to stop` | The scenario may have completed successfully, but ChromeDriver could not close in time. Close residual Chrome processes and update Selenium/WebDriverManager if it persists. |
 
 ## Adding a new test
 
