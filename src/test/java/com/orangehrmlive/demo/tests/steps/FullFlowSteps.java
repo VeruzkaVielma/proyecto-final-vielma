@@ -25,7 +25,7 @@ public class FullFlowSteps {
     }
 
     @When("the user enters username {string} in the Username field")
-    public void enterCredentials(String username){
+    public void enterUsername(String username){
         loginPage.enterUsername(username);
         System.out.println("   ➡️ Entering user: " + username);
     }
