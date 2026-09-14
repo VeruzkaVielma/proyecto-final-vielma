@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class DashboardPage extends BasePage{
 
-    //Locators:
+    // Locators:
     private By titleDashboardPage = By.cssSelector("h6.oxd-topbar-header-breadcrumb-module");
     private By pimOptionMenu = By.xpath("//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name']" +
             "[normalize-space()='PIM']");
@@ -29,7 +29,7 @@ public class DashboardPage extends BasePage{
         return new LoginPage(driver);
     }
 
-    //Verifications methods:
+    // Verifications methods:
     public boolean isOnDashboardPage(){
         return driver.getCurrentUrl().contains("/dashboard");
     }

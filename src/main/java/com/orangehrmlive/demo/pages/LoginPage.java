@@ -5,14 +5,14 @@ import org.openqa.selenium.WebDriver;
 
 public class LoginPage extends BasePage {
 
-    //Locators:
+    // Locators:
     private By usernameField =  By.cssSelector("input[placeholder='Username']");
     private By passwordField = By.cssSelector("input[placeholder='Password']");
     private By loginButton = By.cssSelector("button[type='submit']");
     private By errorMessage = By.cssSelector(".oxd-alert-content-text");
     private static final String URL = "https://opensource-demo.orangehrmlive.com/";
 
-    // Constructor method
+    // Constructor method:
     public LoginPage(WebDriver driver) {
         super(driver);
     }

@@ -10,7 +10,7 @@ import java.util.List;
 
 public class PIMPage extends BasePage{
 
-    //Locators:
+    // Locators:
     private By titlePIMPage = By.cssSelector("h6.oxd-topbar-header-breadcrumb-module");
     private By employeeNameField = By.cssSelector("input[placeholder='Type for hints...']");
     private By searchButton = By.cssSelector("button[type='submit']");
@@ -22,7 +22,7 @@ public class PIMPage extends BasePage{
     private By dashboardOptionMenu = By.xpath("//span[@class='oxd-text oxd-text--span oxd-main-menu-item--name']" +
             "[normalize-space()='Dashboard']");
 
-    //Constructor method:
+    // Constructor method:
     public PIMPage(WebDriver driver) { super(driver); }
 
     // Mandatory methods:
