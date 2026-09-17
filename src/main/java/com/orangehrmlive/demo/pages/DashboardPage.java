@@ -34,6 +34,5 @@ public class DashboardPage extends BasePage{
         return driver.getCurrentUrl().contains("/dashboard");
     }
 
-    public String getDashboardHeaderText(){return getText(titleDashboardPage);
-    }
+    public String getDashboardHeaderText(){return getText(titleDashboardPage); }
 }

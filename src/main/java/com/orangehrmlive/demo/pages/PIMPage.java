@@ -6,8 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import java.util.List;
-
 public class PIMPage extends BasePage{
 
     // Locators:
@@ -53,11 +51,9 @@ public class PIMPage extends BasePage{
 
     public boolean hasEmployeeInResults(String expectedEmployeeName){
         if (!hasResults()) { return false; }
-        List<WebElement> rows = driver.findElements(tableRows);
-        for (WebElement row : rows) { String rowText = row.getText();
-            if (rowText.contains(expectedEmployeeName)) { return true; }
-        }
-        return false;
+        By employeeRow = By.xpath("//div[contains(@class, 'oxd-table-card')]" +
+                "[contains(., '" + expectedEmployeeName + "')]");
+        return isElementVisible(employeeRow);
     }
 
     public String getPIMHeaderText(){ return getText(titlePIMPage); }
