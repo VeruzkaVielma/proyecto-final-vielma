@@ -68,8 +68,6 @@ proyectoFinalVielma/
 │       │   │   ├── Hooks.java
 │       │   │   └── TestRunner.java
 │       │   └── steps/
-│       │       ├── LoginSteps.java
-│       │       ├── PIMSteps.java
 │       │       └── FullFlowSteps.java
 │       └── resources/features/
 │           └── full_flow.feature
