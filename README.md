@@ -138,31 +138,6 @@ Configure the project SDK and Maven runner JDK to Java 25. A different Java vers
 <maven.compiler.target>25</maven.compiler.target>
 ```
 
-## Running the tests
-
-From the root folder, run the complete suite:
-
-```powershell
-mvn clean test
-```
-
-Chrome opens once per scenario, performs the steps, and closes automatically through the `@After` hook.
-
-To run a tagged group of scenarios, pass Cucumber's tag filter:
-
-```powershell
-# Login scenarios
-mvn test -Dcucumber.filter.tags="@login"
-
-# PIM search scenarios
-mvn test -Dcucumber.filter.tags="@pim and @search"
-
-# Full end-to-end scenario
-mvn test -Dcucumber.filter.tags="@e2e"
-```
-
-You can also run `TestRunner` directly from the IDE as a TestNG test.
-
 ## Test report and troubleshooting
 
 After execution, open the generated report in a browser:
